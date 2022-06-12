@@ -1,0 +1,5 @@
+Find a blog post by carlos.
+Click on carlos and observe that the URL contains his user ID. Make a note of this ID.
+Log in using the supplied credentials and access your account page.
+Change the "id" parameter to the saved user ID.
+Retrieve and submit the API key.
